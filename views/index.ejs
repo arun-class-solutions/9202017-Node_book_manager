@@ -9,7 +9,7 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 
@@ -18,25 +18,27 @@
 		<a href="#" data-toggle="modal" data-target="#add-book-modal" class="btn btn-primary">Add New Book</a>
 	</div>
 	<!--One Book-->
-	<div class="row margin-top-20 book-container">
-		<div class="col-sm-3">
-			<img src="https://s3-us-west-2.amazonaws.com/sandboxapi/to_kill_a_mockingbird.jpg" class="img-responsive" />
+	<% books.forEach((book) => { %>
+		<div class="row margin-top-20 book-container">
+			<div class="col-sm-3">
+				<img src="<%= book.image %>" class="img-responsive" />
+			</div>
+			<div class="col-sm-9">
+				<div class="margin-top-20">
+					<span class="bold">Title: </span><span><%= book.title %></span>
+				</div>
+				<div>
+					<span class="bold">Author: </span><span><%= book.author %></span>
+				</div>
+				<div>
+					<span class="bold">Release Date: </span><span><%= book.release_date %></span>
+				</div>
+				<div class="margin-top-20">
+					<a href="#" class="btn btn-default">Edit Book</a>
+				</div>
+			</div>
 		</div>
-		<div class="col-sm-9">
-			<div class="margin-top-20">
-				<span class="bold">Title: </span><span>To Kill a Mockingbird</span>
-			</div>
-			<div>
-				<span class="bold">Author: </span><span>Harper Lee</span>
-			</div>
-			<div>
-				<span class="bold">Release Date: </span><span>July 11, 1960</span>
-			</div>
-			<div class="margin-top-20">
-				<a href="#" class="btn btn-default">Edit Book</a>
-			</div>
-		</div>
-	</div>
+	<% }); %>
 	<!--/One Book-->
 </div>
 
