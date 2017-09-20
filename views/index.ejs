@@ -34,7 +34,7 @@
 					<span class="bold">Release Date: </span><span><%= book.release_date %></span>
 				</div>
 				<div class="margin-top-20">
-					<a href="#" class="btn btn-default">Edit Book</a>
+					<a href="/books/<%= book.id %>/edit" class="btn btn-default">Edit Book</a>
 				</div>
 			</div>
 		</div>
@@ -46,40 +46,42 @@
 <div id="add-book-modal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Add New Book</h4>
-			</div>
-			<div class="modal-body">
-				<div class="bold">
-					Title
+			<form method="POST" action="/books">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Add New Book</h4>
 				</div>
-				<div class="margin-top-20">
-					<input type="text" class="form-control" />
+				<div class="modal-body">
+					<div class="bold">
+						Title
+					</div>
+					<div class="margin-top-20">
+						<input name="book[title]" type="text" class="form-control" />
+					</div>
+					<div class="bold margin-top-20">
+						Author
+					</div>
+					<div class="margin-top-20">
+						<input name="book[author]" type="text" class="form-control" />
+					</div>
+					<div class="bold margin-top-20">
+						Release Date
+					</div>
+					<div class="margin-top-20">
+						<input name="book[release_date]" type="text" class="form-control" />
+					</div>
+					<div class="bold margin-top-20">
+						Image
+					</div>
+					<div class="margin-top-20">
+						<input name="book[image]" type="text" class="form-control" />
+					</div>
 				</div>
-				<div class="bold margin-top-20">
-					Author
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Save Book</button>
 				</div>
-				<div class="margin-top-20">
-					<input type="text" class="form-control" />
-				</div>
-				<div class="bold margin-top-20">
-					Release Date
-				</div>
-				<div class="margin-top-20">
-					<input type="text" class="form-control" />
-				</div>
-				<div class="bold margin-top-20">
-					Image
-				</div>
-				<div class="margin-top-20">
-					<input type="text" class="form-control" />
-				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save Book</button>
-			</div>
+			</form>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

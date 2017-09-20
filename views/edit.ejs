@@ -9,7 +9,7 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
 
@@ -21,25 +21,25 @@
 		Title
 	</div>
 	<div class="margin-top-20">
-		<input type="text" class="form-control" />
+		<input type="text" class="form-control" value="<%= book.title %>" />
 	</div>
 	<div class="bold margin-top-20">
 		Author
 	</div>
 	<div class="margin-top-20">
-		<input type="text" class="form-control" />
+		<input type="text" class="form-control" value="<%= book.author %>" />
 	</div>
 	<div class="bold margin-top-20">
 		Release Date
 	</div>
 	<div class="margin-top-20">
-		<input type="text" class="form-control" />
+		<input type="text" class="form-control" value="<%= book.release_date %>" />
 	</div>
 	<div class="bold margin-top-20">
 		Image
 	</div>
 	<div class="margin-top-20">
-		<input type="text" class="form-control" />
+		<input type="text" class="form-control" value="<%= book.image %>" />
 	</div>
 	<div class="margin-top-20">
 		<a href="/" class="btn btn-default">Cancel</a>

@@ -25,4 +25,25 @@ app.get("/books", (req, res) => {
   });
 });
 
+app.get("/books/:id/edit", (req, res) => {
+  request({
+    method: "GET",
+    uri: `http://myapi-profstream.herokuapp.com/api/fbcdf9/books/${req.params.id}`
+  }, (err, response, body) => {
+    res.render("edit", {
+      book: JSON.parse(body)
+    });
+  });
+});
+
+app.post("/books", (req, res) => {
+  request({
+    method: "POST",
+    uri: "http://myapi-profstream.herokuapp.com/api/fbcdf9/books",
+    json: req.body.book
+  }, (err, response, body) => {
+    res.redirect("/books");
+  });
+});
+
 app.listen(3000);
